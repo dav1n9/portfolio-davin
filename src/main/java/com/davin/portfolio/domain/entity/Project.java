@@ -29,7 +29,7 @@ public class Project extends BaseEntity {
     @JoinColumn(name = "project_id")
     private final List<ProjectDetail> details = new ArrayList<>();
     @OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private final List<ProjectSkill> skills = new ArrayList<>();
+    public final List<ProjectSkill> skills = new ArrayList<>();
 
     @Builder
     public Project(String name, String description, Integer startYear, Integer startMonth,
