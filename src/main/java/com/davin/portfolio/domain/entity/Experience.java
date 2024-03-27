@@ -24,7 +24,7 @@ public class Experience extends BaseEntity {
     private Integer startMonth;
     private Integer endYear;
     private Integer endMonth;
-    private boolean isActive;
+    private Boolean isActive;
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "experience_id")
     private final List<ExperienceDetail> details = new ArrayList<>();
@@ -57,7 +57,7 @@ public class Experience extends BaseEntity {
         this.isActive = isActive;
     }
 
-    public void addDatails(List<ExperienceDetail> details) {
+    public void addDetails(List<ExperienceDetail> details) {
         if (details != null) {
             this.details.addAll(details);
         }

@@ -24,7 +24,7 @@ public class Project extends BaseEntity {
     private Integer startMonth;
     private Integer endYear;
     private Integer endMonth;
-    private boolean isActive;
+    private Boolean isActive;
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "project_id")
     private final List<ProjectDetail> details = new ArrayList<>();
