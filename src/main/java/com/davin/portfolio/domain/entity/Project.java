@@ -3,6 +3,7 @@ package com.davin.portfolio.domain.entity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Project extends BaseEntity {
 
@@ -29,7 +31,7 @@ public class Project extends BaseEntity {
     @JoinColumn(name = "project_id")
     private final List<ProjectDetail> details = new ArrayList<>();
     @OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    public final List<ProjectSkill> skills = new ArrayList<>();
+    private final List<ProjectSkill> skills = new ArrayList<>();
 
     @Builder
     public Project(String name, String description, Integer startYear, Integer startMonth,
@@ -59,7 +61,7 @@ public class Project extends BaseEntity {
         this.isActive = isActive;
     }
 
-    public void addDatails(List<ProjectDetail> details) {
+    public void addDetails(List<ProjectDetail> details) {
         if (details != null) {
             this.details.addAll(details);
         }
