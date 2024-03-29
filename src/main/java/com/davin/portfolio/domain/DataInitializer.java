@@ -85,7 +85,7 @@ public class DataInitializer {
                 .endMonth(2)
                 .isActive(true)
                 .build();
-        experience1.addDatails(
+        experience1.addDetails(
                 List.of(
                         ExperienceDetail.builder()
                                 .content("GPA 4.3/4.5")
@@ -115,7 +115,7 @@ public class DataInitializer {
                 .endYear(12)
                 .isActive(true)
                 .build();
-        project1.addDatails(
+        project1.addDetails(
                 List.of(
                         ProjectDetail.builder()
                                 .content("구글 맵스를 활용한 유기묘 발견 지역 정보 제공 API 개발")
@@ -129,7 +129,7 @@ public class DataInitializer {
                                 .build()
                 )
         );
-        project1.skills.addAll(List.of(
+        project1.getSkills().addAll(List.of(
                 ProjectSkill.builder().project(project1).skill(java).build(),
                 ProjectSkill.builder().project(project1).skill(spring).build(),
                 ProjectSkill.builder().project(project1).skill(mysql).build(),
