@@ -2,13 +2,13 @@ package com.davin.portfolio.domain.entity;
 
 import com.davin.portfolio.domain.constant.SkillType;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
+@Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Skill extends BaseEntity {
 
@@ -18,9 +18,11 @@ public class Skill extends BaseEntity {
     private Long id;
 
     private String name;
+
     @Column(name = "skill_type")
     @Enumerated(value = EnumType.STRING)
     private SkillType type;
+
     private Boolean isActive;
 
     @Builder
