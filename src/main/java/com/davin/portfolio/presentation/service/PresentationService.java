@@ -7,13 +7,14 @@ import com.davin.portfolio.presentation.dto.ProjectDTO;
 import com.davin.portfolio.presentation.dto.ResumeDTO;
 import com.davin.portfolio.presentation.repository.PresentationRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PresentationService {
     private final PresentationRepository presentationRepository;
 

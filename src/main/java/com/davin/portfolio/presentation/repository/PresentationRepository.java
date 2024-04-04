@@ -2,20 +2,20 @@ package com.davin.portfolio.presentation.repository;
 
 import com.davin.portfolio.domain.entity.*;
 import com.davin.portfolio.domain.repository.*;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PresentationRepository {
-    private AchievementRepository achievementRepository;
-    private ExperienceRepository experienceRepository;
-    private IntroductionRepository introductionRepository;
-    private LinkRepository linkRepository;
-    private SkillRepository skillRepository;
-    private ProjectRepository projectRepository;
+    private final AchievementRepository achievementRepository;
+    private final ExperienceRepository experienceRepository;
+    private final IntroductionRepository introductionRepository;
+    private final LinkRepository linkRepository;
+    private final SkillRepository skillRepository;
+    private final ProjectRepository projectRepository;
 
     public List<Achievement> getActiveAchievements() {
         return achievementRepository.findAllByIsActive(true);
